@@ -2,6 +2,7 @@ public class EmployeeWageP {
     public static final int IS_PART_TIME = 2;
     public static final int IS_FULL_TIME = 1;
     public static final int emp_rate_per_hr = 20;
+    public static final int num_of_working_days = 20;
 
     public static void main(String[] args) {
         System.out.println("Welcome to employee wage program");
@@ -18,7 +19,9 @@ public class EmployeeWageP {
 
         int empHr = 0;
         int empWage = 0;
-
+        int totalEmpWage = 0;
+     
+        for(int day = 0; day < num_of_working_days;day++){
         switch (empCheck) {
             case IS_PART_TIME:
                 empHr = 4;
@@ -32,6 +35,9 @@ public class EmployeeWageP {
         }
 
         empWage = empHr * emp_rate_per_hr;
-        System.out.println("Employeee Wage for a day is: " + empWage);
+        totalEmpWage += empWage;
+        //System.out.println("Employeee Wage for a day is: " + empWage);
+    }
+    System.out.println("Total employee wage for month is : " + totalEmpWage);
     }
 }
